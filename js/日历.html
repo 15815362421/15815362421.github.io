@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#calendar{
+				width: 700px;
+				margin: 100px auto;
+				/*background: pink;*/
+			}
+			#year_month{
+				text-align: center;
+			}
+			#content ul{
+				list-style: none;
+			}
+			#content li{
+				text-align: center;
+				width: 100px;
+				height: 50px;
+				line-height: 50px;
+				float: left;
+				/*background: lightpink;*/
+			}
+			#content li:hover{
+				background: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="calendar">
+			<div id="year_month">
+				<select id="year"></select>年
+				<select id="month"></select>月
+			</div>
+			<div id="content">
+				<ul>
+					<li>周日</li>
+					<li>周一</li>
+					<li>周二</li>
+					<li>周三</li>
+					<li>周四</li>
+					<li>周五</li>
+					<li>周六</li>
+				</ul>
+				<ul id="days"></ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var yearSelect = document.getElementById("year")
+		var monthSelect = document.getElementById("month")
+		var daysUl = document.getElementById("days")
+		
+		for(var year = 1900 ; year < 3000 ; year++){
+			createOption(year,yearSelect)
+		}
+		for(var month = 1 ; month < 13 ; month++){
+			createOption(month,monthSelect)
+		}
+		
+		setCurrentYearAndMonth();
+		
+		fillDays(+yearSelect.value,monthSelect.value - 1);
+		
+		yearSelect.onchange = function(){
+			fillDays(+yearSelect.value,monthSelect.value - 1);
+		}
+		
+		monthSelect.onchange = function(){
+			fillDays(+yearSelect.value,monthSelect.value - 1);
+			
+		}
+		
+		function createOption(value,parentSelect){
+			var opt = document.createElement("option")
+			opt.value = value
+			opt.innerHTML = value
+			parentSelect.appendChild(opt)
+		}
+
+		
+		function setCurrentYearAndMonth(){
+			var d = new Date()
+			yearSelect.value = d.getFullYear()
+			monthSelect.value = d.getMonth() + 1
+		}
+		
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		function fillDays(year,month){
+			daysUl.innerHTML = ""
+			var d = new Date(year,month,1)
+			var dayOfWeek = d.getDay()
+			for(var i = 0;i<dayOfWeek;i++){
+				createLi('',daysUl)
+			}
+			var nextOne = new Date(year,month+1,1)
+			nextOne.setDate(0)
+			var currentDays = nextOne.getDate()
+			for(var i = 1; i <= currentDays; i++ ){
+				createLi(i,daysUl)
+			}
+			var today = new Date().getDate()
+			var li = document.getElementById(today + "")
+			li.style.backgroundColor = "deeppink"
+			li.style.borderRadius = "50%"
+		}
+		
+		
+		function createLi(content,ul){
+			var li = document.createElement("li")
+			li.innerHTML = content
+			if((content + "").length > 0){
+				li.id = content
+			}
+			ul.appendChild(li)
+		}
+		
+		
+		
+		
+	</script>
+</html>

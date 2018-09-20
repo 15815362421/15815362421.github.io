@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			background: #9d9d9d;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			margin: 20px auto;
+			background: #00ec00;
+			border: 1px solid #000;
+			border-radius: 50%;
+			overflow: hidden;
+			position: relative;
+			animation:run1 linear 1s infinite ;
+			box-shadow: 0 0 20px #000;
+		}
+		.left{
+			width: 100px;
+			height: 200px;
+			background: #fff;
+		}
+		.right{
+			width: 100px;
+			height: 200px;
+			background: #000;
+			position: absolute;
+			right: 0px;
+			top: 0px;
+		}
+		.a{
+			width: 100px;
+			height: 100px;
+			background: white;
+			border-radius: 50%;
+			position: absolute;
+			left: 50px;
+			z-index: 50;
+		}
+		.b{
+			width: 100px;
+			height: 100px;
+			background: black;
+			border-radius: 50%;
+			position: absolute;
+			right: 50px;
+			bottom: 0px;
+			z-index: 50;
+		}
+		.o1{
+			width: 30px;
+			height: 30px;
+			background: black;
+			border-radius: 50%;
+			position: absolute;
+			left: 30px;
+			bottom: 35px;
+		}
+		.o2{
+			width: 30px;
+			height: 30px;
+			background: white;
+			border-radius: 50%;
+			position: absolute;
+			right: 30px;
+			bottom: 35px;
+		}
+
+		@keyframes run1{
+			0%{
+				transform:rotateZ(0deg);
+			}
+			100%{
+				transform:rotateZ(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="left">
+			<div class="a">
+				<div class="o1"></div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="b">
+				<div class="o2"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

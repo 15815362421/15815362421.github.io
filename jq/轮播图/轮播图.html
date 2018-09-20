@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.outer{
+				position: relative;
+				width: 960px;
+				height: 300px;
+				overflow: hidden;
+			}
+			#turnL{
+				width: 60px;
+				height: 30px;
+				position: absolute;
+				top: 140px;
+				left: 5px;
+				z-index: 99;
+				background: grey;
+				opacity: 0.5;
+				color: white;
+				line-height: 30px;
+				text-align: center;
+			}
+			#turnR{
+				width: 60px;
+				height: 30px;
+				position: absolute;
+				top: 140px;
+				right: 5px;
+				z-index: 99;
+				background: grey;
+				opacity: 0.5;
+				color: white;
+				line-height: 30px;
+				text-align: center;
+			}
+			#box{
+				position: absolute;
+				width: 4800px;
+				height: 300px;
+			}
+			.outer img{
+				float: left;
+				width: 960px;
+				height: 300px;
+			}
+			#btn{
+				z-index: 99;
+				position: absolute;
+				bottom: 20px;
+				left: 430px;
+			}
+			#btn ul{
+				list-style: none;
+			}
+			#btn ul li{
+				text-align: center;
+				line-height: 20px;
+				float: left;
+				width: 20px;
+				height: 20px;
+				margin:0px 10px ;
+				background: grey;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="outer">
+			<div id="turnL">上一张</div>
+			<div id="turnR">下一张</div>
+			<div id="box">
+				<img src="banner3.png"/>
+				<img src="banner1.png"/>
+				<img src="banner2.png"/>
+				<img src="banner3.png"/>
+				<img src="banner1.png"/>
+				
+			</div>
+			<div id="btn">
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+
+		$(function(){
+			var left = -960
+			$('#box').css('left',-960)
+			$('#turnL').on('click',function(){
+				
+				left +=960
+				$('#box').animate({
+					left: left
+				},500,function(){
+					if(left >= 0){
+						left = -2880
+						$('#box').css('left',-2880)
+					}
+				})
+			})
+			$('#turnR').on('click',function(){
+				left -=960
+				
+				$('#box').animate({
+					left:left
+				},500,function(){
+					if(left <= -2880){
+						left = 0
+						$(this).css({left:0});
+					}
+				})
+			})
+//			setInterval(function(){
+//				$('#turnR').click()
+//			},5000)
+			$('li:eq(0)').on('mouseover',function(){
+				left = 0
+				$('#box').css('left',left)
+			})
+			$('li:eq(1)').on('mouseover',function(){
+				left = -960
+				$('#box').css('left',left)
+			})
+			$('li:eq(2)').on('mouseover',function(){
+				left = -1920
+				$('#box').css('left',left)
+			})
+			$('li').hover(function(){
+				$(this).css('color','#FFF')
+				$(this).css('backgroundColor','black')
+				
+			},function(){
+				$(this).css('color','#000')
+				$(this).css('backgroundColor','grey')	
+			})
+		})
+		
+		
+	</script>
+</html>

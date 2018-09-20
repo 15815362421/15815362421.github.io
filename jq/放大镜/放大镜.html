@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				height: 500px;
+				margin: 0;
+				padding: 0;
+			}
+			#small{
+				position: relative;
+				float: left;
+				width: 350px;
+				height: 450px;
+				background: url(small.jpg);
+			}
+			#mouse{
+				position: absolute;
+				display: none;
+				width: 100px;
+				height: 100px;
+				background: pink;
+				border: 1px solid deeppink;
+				opacity: 0.5;
+			}
+			#big{
+				position: relative;
+				display: none;
+				float: left;
+				width: 400px;
+				height: 400px;
+				overflow: hidden;	
+			}
+			#img{
+				position: absolute;
+				width: 800px;
+				height: 1020px;
+				background: url(big.jpg);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="small">
+			<div id="mouse"></div>
+		</div>
+		<div id="big">
+			<div id="img"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$('#small').on('mouseover',function(e){
+				$(this).children().css('display','block')
+				$(this).next().css('display','block')
+			}).on('mousemove',function(e){
+				var maxLeft
+				var mouseX = e.pageX - $('#small').offset().left - $('#mouse').width() / 2
+				var mouseY = e.pageY - $('#small').offset().top - $('#mouse').height() / 2
+				console.log(mouseX)
+				if(mouseX > $(this).width() - $('#mouse').width()){
+					mouseX = $(this).width() - $('#mouse').width()
+				}
+				if(mouseX <0){
+					mouseX = 0
+				}
+				if(mouseY<0){
+					mouseY = 0
+				}
+				if(mouseY > $(this).height() - $('#mouse').height()){
+					mouseY = $(this).height() - $('#mouse').height()
+				}
+				var bigX = -e.pageX*1.5
+				var bigY = -e.pageY*1.5
+				if(bigX < -400){
+					bigX = -400
+				}
+				if(bigY < -626){
+					bigY = -626
+				}
+					$('#mouse').css({
+					left:mouseX,
+					top:mouseY
+				})
+				$('#img').css({
+					left:bigX,
+					top:bigY
+				})
+				
+			}).on('mouseleave',function(){
+				$(this).children().css('display','none')
+				$(this).next().css('display','none')
+			})
+		})
+	</script>
+</html>

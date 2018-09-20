@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.cbox{
+				position: relative;
+				/*display: block;*/
+				width: 60px;
+				height: 30px;
+				display: block;
+				border-radius: 34px;
+				/*background: lightblue;*/
+			}
+			input{
+				display: none;
+			}
+			.btn{
+				width: 60px;
+				height: 30px;
+				background: gray;
+				transition: all 1s;
+				margin-top: 20px;
+			}
+			.btn:before{
+				position: absolute;
+				top: 2.5px;
+				left: 2.5px;
+				content: "";
+				width: 25px;
+				height: 25px;
+				background: white;
+				transition: all 1s;
+			}
+			.ball{
+				border-radius: 34px;
+			}
+			.ball:before{
+				border-radius:50% ;
+			}
+			input:checked+.btn{
+				background: lightblue;
+			}
+			input:checked+.btn:before{
+				transform: translateX(30px);
+			}
+		</style>
+	</head>
+	<body>
+		<label class="cbox">
+			<input type="checkbox"/>
+			<div class="btn"></div>
+		</label>
+		<label class='cbox'>
+			<input type="checkbox"/>
+			<div class="btn ball"></div>
+		</label>
+	</body>
+</html>

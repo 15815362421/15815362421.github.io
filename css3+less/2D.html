@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div{
+				text-align: center;
+				line-height: 100px;
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				background: red;
+				transition: all 1s;
+				margin: 50px;
+				
+			}
+			.box1:hover{
+				transform: translate(45px,45px);
+				/*transform: translateX(45px);*/
+				/*transform: translateY(45px);*/
+			}
+			.box2:hover{
+				transform: rotate(45deg);
+				/*transform: rotateX(45deg);*/
+				/*transform: rotateY(45deg);*/
+			}
+			.box3:hover{
+				transform: scale(2,2);
+				/*transform: scaleX(2);*/
+				/*transform: scaleY(2);*/
+			}
+			.box4:hover{
+				transform: skew(45deg,45deg);
+				/*transform: skewX(45deg);*/
+				/*transform: skewY(45deg);*/
+			}
+			.cont1{
+				margin-left: 50px;
+				width: 200px;
+				height: 200px;
+				border: 1px solid palegoldenrod;
+				perspective : 200;
+				-webkit-perspective: 100px;
+			}
+			.box5:hover{
+				transform: rotateX(45deg);
+			}
+			.cont2{
+				margin-left: 50px;
+				width: 200px;
+				height: 200px;
+				border: 1px solid palegoldenrod;
+				perspective : 200;
+				-webkit-perspective: 200px;
+			}
+			.box6:hover{
+				transform: rotateX(45deg);
+			}
+			.box7:hover{
+				transform-origin: 100% 100% 0;
+				 /*-webkit-transform-origin:100% 0 0;*/
+				transform: rotate(45deg);
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div box1">translate</div>
+		<div class="div box2">rotate</div>
+		<div class="div box3">scale</div>
+		<div class="div box4">skew</div>
+		<br />
+		<div class="cont1">
+			perspective:100
+		<div class="div box5"></div>
+		</div>
+		<div class="cont2">
+			perspective:200
+		<div class="div box6"></div>
+		</div>
+		<br />
+		<div class="div box7"></div>
+		<div class="div box8"></div>
+		<div class="div box9"></div>
+		<div class="div box10"></div>
+		<div class="div box11"></div>
+		<div class="div box12"></div>
+	</body>
+</html>

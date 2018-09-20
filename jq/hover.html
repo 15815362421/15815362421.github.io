@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			ul{
+				list-style: none;
+				overflow: hidden;
+				
+			}
+			ul li {
+				position: relative;
+				margin-left: 20px;
+			}
+			ul li h5{
+				position: absolute;
+				z-index: 2;
+				height: 180px;
+				line-height: 40px;
+				width:100%;
+				buttom:-160px;
+				color: #FFF;
+				background: rgba(0,0,0,5);
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<img src="small.jpg" alt="" />
+				<h5>XXXXXXXXXXXXXXXXXXXX</h5>
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$('ul li').mouseenter(function(){
+				$(this).children('h5').stop(true).animate({
+					bottom:30
+				}).animate({buttom:20}).animate({buttom:25})
+			}).animate({buttom:0})
+		})
+	</script>
+</html>

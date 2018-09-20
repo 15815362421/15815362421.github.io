@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    div{
+        margin: 50px;
+        width: 50px;
+        height: 50px;
+        background: lightblue;
+        font-size: 4px;
+    }
+    span{
+        display: inline-block;
+        width: 3px;
+        height: 15px;
+        background: orange;
+        transform: scaleY(0.3);
+        animation: run 1s 0.6s infinite;
+    }
+    span:first-child{
+        animation: run 1s 0.3s infinite;
+    }
+    span:last-child{
+        animation: run 1s 0.9s infinite;
+    }
+    @keyframes run{
+        0%{
+            transform: scaleY(0.3)
+        }
+        50%{
+            transform: scaleY(1)
+        }
+        100%{
+            transform: scaleY(0.3)
+        }
+
+    }
+    </style>
+</head>
+<body>
+<div>
+    <div class="cont">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class='cont'>
+        <svg viewBox="0 0 130 120" style="width: 15px;" xmlns="http://www.w3.org/2000/svg">
+            <rect height="100" width="30" x="0" y="0">  
+            </rect>
+            <rect height="100" width="30" x="50" y="0">
+            </rect>
+            <rect height="100px" width="30" x="100" y="0">
+            </rect>
+    </div>
+</div>    
+</body>
+</html>

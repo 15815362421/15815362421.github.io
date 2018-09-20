@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#a{
+				width: 100px;
+				height: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<button>放大</button>
+		<div id="a">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		$('button:eq(0)').click(function(){
+			$('#a').animate({
+				opacity: 0.5,
+				height:300,
+				width:300,
+				marginTop:300,
+				marginLeft:300
+			},5000)
+		})
+	</script>
+</html>

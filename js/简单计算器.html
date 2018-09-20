@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="num1"/>
+		<select id="fuhao">
+			<option value="jia">+</option>
+			<option value="jian">-</option>
+			<option value="cheng">*</option>
+			<option value="chu">/</option>
+		</select>
+		<input type="text" id="num2"/>
+		<input type="button" id="btn" value="="/>
+		<input type="text" id="num3"/>
+		<script type="text/javascript">
+			btn.onclick = function(){
+				var aa = fuhao.value
+				var a = parseInt(num1.value)
+				var b = parseInt(num2.value)
+				var x;
+				switch(aa){
+					case "jia":
+						x = a + b
+						break;
+					case "jian":
+						x = a - b
+						break;
+					case "cheng":
+						x = a * b
+						break;
+					case "chu":
+						x = a / b
+						break;
+						
+				}
+				num3.value = x
+				console.log(x)
+			};
+		</script>
+	</body>
+</html>

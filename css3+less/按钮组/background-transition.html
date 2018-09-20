@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				position: relative;
+				color: white;
+				width: 100px;
+				height: 50px;
+				background: grey;
+				z-index: 1;
+				margin: 10px;
+				transition: all 0.7s;
+			}
+			.box:before{
+				position: absolute;
+				display: inline-block;
+				content: '';
+				width: 100px;
+				height: 50px;
+				background: lightblue;
+				transition: all 0.7s;
+				transform: scaleY(0);
+				z-index: -1;
+			}
+			.box:hover::before{
+				transform: scaleY(1);
+			}
+			.bounce-in:hover{
+				transform: scale(1.2);
+				transition-timing-function:cubic-bezier(0.5,2,0.5,-1)
+			}
+			.wobble-vertical:hover{
+				animation: run 1s ;
+			}
+			@keyframes run{
+				20%{transform: translateY(10px);}
+				40%{transform: translateY(-8px);}
+				60%{transform: translateY(5px);}
+				80%{transform: translateY(-2px);}
+				100%{transform: translateY(0px);}
+					
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box shutter-out-vertical">shutter-out-vertical</div>
+		<div class="bounce-in">bounce-in</div>
+		<div class="wobble-vertical">wobble-vertical</div>
+	</body>
+</html>

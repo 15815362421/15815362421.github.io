@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				margin: 0px auto ;
+				width: 250px;
+				height: 125px;
+				text-align: center;
+			}
+			ul li{
+				float: left;
+				list-style: none;
+			}
+			ul li div:nth-of-type(1){
+				width:100px;
+				line-height: 30px;
+				height: 30px;
+				background: #f0f0f0;
+			}
+			ul li div:nth-of-type(2){
+				display: none;
+				background: #f0f0f0;
+				
+			}
+			div a{
+				
+				display: block;
+				height: 25px;
+				line-height: 25px;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><div>123321</div>
+				<div class="hide">
+					<a href="#">我的vip</a>
+					<a href="#">个人中心</a>
+					<a href="#">账号设置</a>
+					<a href="#">意见反馈</a>
+				</div>
+			</li>
+			<li>
+				<div>设置</div>
+				<div class="hide">
+					<a href="#">搜索设置</a>
+					<a href="#">高级设置</a>
+					<a href="#">关闭检测</a>
+					<a href="#">搜索历史</a>
+				</div>
+			</li>
+	</ul>
+	</body>
+	<script type="text/javascript">
+		var lis = document.getElementsByTagName('li')
+		for(var i = 0 ; i < lis.length ; i++ ){
+			lis[i].onmouseover = function(){
+				this.getElementsByTagName('div')[1].style.display = "block"
+			}
+			lis[i].onmouseout = function(){
+				this.getElementsByTagName('div')[1].style.display = "none"
+			}
+		}
+		var ax = document.getElementsByTagName('a')
+		for(var i = 0 ; i < ax.length ; i++ ){
+			ax[i].onmouseover = function(){
+				this.style.background = "blue"
+			}
+			ax[i].onmouseout = function(){
+				this.style.background = "#f0f0f0"
+			}
+		}
+	</script>
+</html>
