@@ -1,4 +1,4 @@
 # 手册
 
-## <a href="https://github.com/15815362421/koo.github.io">xiaomi</a>
+## <a href="https://koo.github.io/HTML+CSS/小米导航条.html">xiaomi</a>
 
