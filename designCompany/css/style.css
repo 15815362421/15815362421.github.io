@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 导航 */
+.navbar {
+    min-height: 60px;
+}
+
+.navbar .navbar-nav,
+.navbar-brand {
+    padding: 0;
+    margin: 20px;
+    font-size: 25px;
+}
+
+.navbar a img {
+    width: 60px;
+}
+
+.carousel-inner {
+    margin-top: 90px;
+}
+
+/* 轮播 */
+#myCarousel {
+    /* animation: slideInDown 2s;        */
+}
+
+#myCarousel .carousel-inner div img {
+    width: 100%;
+}
+
+/* 简介 */
+.jumbotron {
+    background: #333;
+    margin-bottom: 0;
+}
+.jumbotron .container{
+    padding: 0;
+}
+.jumbotron .col-sm-6{
+    display: inline-block;
+    padding: 0;
+}
+.jumbotron h2 {
+    text-align: center;
+    opacity: 0;
+    display: inline-block;
+    color: white;
+    /* animation: fadeInLeft 1s; */
+}
+.jumbotron .container div{
+    text-align: center;
+}
+.jumbotron a {
+    opacity: 0;
+    width: 200px;
+    height: 60px;
+    line-height: 1.9;
+    border-radius: 50px;
+    color: white;
+    margin-top: 20px;
+    border-color: white;
+    transition: all 0.4s;
+    /* -webkit-animation: fadeInRight 1s; */
+}
+
+
+.btn.focus,
+.btn:focus,
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* 服务介绍 */
+.service-introduction {
+    padding-bottom: 50px;
+}
+
+.service-introduction .sec-title {
+    opacity: 0;
+    margin: 50px 0;
+    /* animation: fadeInUp 1s; */
+}
+
+.service-introduction .container {
+    width: 90%;
+}
+
+.service-introduction .container ul div {
+    opacity: 0;
+    padding: 0;
+    overflow: hidden;
+    /* animation: fadeInUp 1s; */
+}
+
+.service-introduction .container ul div a {
+    width: 100%;
+    height: 100%;
+}
+
+.service-introduction .container ul div img {
+    transition: all 0.6s;
+    width: 100%;
+    height: 300px;
+}
+
+.service-introduction .container ul div:hover a img {
+    transform: scale(1.2)
+}
+
+/* 宣言 */
+.brand-box {
+    background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541773799657&di=4ccd43ba498c77235dcb8d2dc1fed698&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F-fo3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2F91529822720e0cf3d1074f8f0c46f21fbf09aad5.jpg') center top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.brand-box .box {
+    opacity: 0;
+    padding: 60px;
+    /* animation: fadeInUp 1s; */
+}
+
+.brand-box .box h1 {
+    padding: 60px;
+    text-align: center;
+    color: white;
+    /* font-size: 2rem; */
+    background: rgba(0, 0, 0, 0.4)
+}
+
+.brand-box .box h1 i {
+    color: red;
+}
+
+/* 团队介绍 */
+.team-introduction .sec-title1 {
+    opacity: 0;
+    padding: 2%;
+    padding-left: 10%;
+}
+
+.team-introduction .container ul .thumbnail {
+    opacity: 0;
+    /* animation: fadeInUp 1s; */
+}
+
+/* 了解更多 */
+.brand-box2 {
+    background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541841550671&di=6c9f85f35204dd7c855cc0a3e993764f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2017-10-11%2F59ddb2fb2cc5a.jpg') center top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.brand-box2 .box2 {
+    opacity: 0;
+    margin-left: 50%;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.4)
+}
+
+.brand-box2 .box2 h1 {
+    padding: 60px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: white;
+    /* animation: fadeInRight 1s; */
+    /* font-size: 2rem; */
+
+}
+
+.brand-box2 .box2 h1 i {
+    color: red;
+}
+
+.brand-box2 .box2 p {
+    /* animation: fadeInRight 1s; */
+
+    font-size: 20px;
+    padding: 120px;
+    padding-top: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.brand-box2 .box2 a {
+    /* animation: fadeInRight 1s; */
+    width: 200px;
+    height: 60px;
+    line-height: 1.9;
+    border-radius: 50px;
+    color: white;
+    margin-left: 38%;
+    margin-bottom: 60px;
+    border-color: white;
+    transition: all 0.4s;
+    /* -webkit-animation: fadeInRight 1s; */
+}
+
+.brand-box2 .box2 .btn:hover {
+    background: white;
+    color: black;
+}
+
+/* 联系我们 */
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-150%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(150%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(150%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
