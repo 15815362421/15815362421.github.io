@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
 }
-
 /* 导航 */
 .navbar {
     min-height: 60px;
@@ -16,7 +15,40 @@
 }
 
 .navbar a img {
-    width: 60px;
+    width:100%;
+}
+.xs-nav>div{
+    position: relative;
+    top: 25px;
+    width: 30px;
+    height: 30px;
+}
+.xs-nav>div::before{
+    font-size: 40px;
+}
+.xs-nav>div:hover>.xs-nav-listMenu{
+    display: block;
+}
+.xs-nav-listMenu{
+    display: none;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 20px;
+    float: left;
+    width: 100px;
+    position: absolute;
+    top:40px;
+    right:-40px;
+    background: black;
+}
+.xs-nav-listMenu>li{
+    color: white;
+    padding: 10px;
+    list-style: none;   
+}
+.xs-nav-listMenu>li:hover{
+    background: white;
+    color: black;
 }
 
 .carousel-inner {
